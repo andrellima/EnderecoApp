@@ -2,3 +2,14 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
+*.gems~
+*.swp
+*.rb~
+*.erb~
+*.haml~
+*.sass~
+*.css~
+*.js~
+*.feature~
+*.swo
+*.yml~
