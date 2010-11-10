@@ -1,0 +1,5 @@
+class Locale < ActiveRecord::Base
+set_primary_key => :locale
+end
+
+

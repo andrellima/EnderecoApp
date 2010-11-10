@@ -1,0 +1,2 @@
+class Regionname < ActiveRecord::Base
+end
