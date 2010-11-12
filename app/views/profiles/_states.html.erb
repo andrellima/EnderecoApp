@@ -1,0 +1,24 @@
+<script type="text/javascript">
+jQuery(function($) {
+// when the #region_id field changes
+  $("#profile_region_id").change(function() {
+    // make a POST call and replace the content
+    var state = $('select#profile_region_id :selected').val();
+    if(state == "") state="0";
+    jQuery.get('/profiles/update_city_select/' + state, function(data){
+        $("#addressCities").html(data);
+    })
+    return false;
+  });
+})
+</script>
+<%= semantic_form_for "profile", :remote=>true, do |form| %>
+  <%= form.inputs do %>
+    <% if !states.blank? %>
+      <%= form.input :region_id, :collection=>states.collect{ |s| [s.name,s.id]} %>
+    <% else %>
+      <%= form.input :region_id, :collection=>[] %>
+    <% end %>
+  <% end %>
+<% end %>
+
